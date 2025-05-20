@@ -1,7 +1,6 @@
 const patterns = [
   /ai overview/i,  // en
-  /übersicht mit ki/i, // de
-  /AI による概要/ // ja
+  /Обзор, сгенерированный искусственным интеллектом/i // ru
 ]
 
 const observer = new MutationObserver(() => {
@@ -12,10 +11,10 @@ const observer = new MutationObserver(() => {
     aiOverviewH1.parentElement.style.display = "none";
   }
 
-  const mainElement = document.querySelector('[role="main"]');
-  if (mainElement) {
-    mainElement.style.marginTop = "24px";
-  }
+  // const mainElement = document.querySelector('[role="main"]');
+  // if (mainElement) {
+  //   mainElement.style.marginTop = "24px";
+  // }
 });
 
 observer.observe(document, {
