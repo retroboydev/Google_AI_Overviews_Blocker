@@ -6,9 +6,14 @@ const patterns = [
 const observer = new MutationObserver(() => {
   // each time there's a mutation in the document see if there's an ai overview to hide
   const aiOverviewH1 = [...document.querySelectorAll('h1')].find(h1 => patterns.some(pattern => pattern.test(h1.innerText)));
+  const aiOverviewH2 = [...document.querySelectorAll('h2')].find(h2 => patterns.some(pattern => pattern.test(h2.innerText)));
 
   if (aiOverviewH1?.parentElement) {
     aiOverviewH1.parentElement.style.display = "none";
+  }
+
+  if (aiOverviewH2?.parentElement) {
+    aiOverviewH2.parentElement.style.display = "none";
   }
 
   // const mainElement = document.querySelector('[role="main"]');
